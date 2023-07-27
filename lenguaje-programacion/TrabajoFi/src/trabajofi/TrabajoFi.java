@@ -26,6 +26,8 @@ public class TrabajoFi {
         Scanner scanner = new Scanner(System.in);
         String operador, opc;
         boolean ban = true, ban2 = true, ban3 = true;
+        String nombrePropietario="", apellidosPropietario="", pasaportePropietario="", ciudadPropietario="", barrioPropietario="";
+        String marcaCelular="", modeloCelular="", numeroCelular="";
         do {
             do {
                 System.out.println("------------------------Menu--------------------------");
@@ -34,25 +36,34 @@ public class TrabajoFi {
                 System.out.println("2. Plan PostPago Megas");
                 System.out.println("3. Plan PostPago Minutos y Megas");
                 System.out.println("4. Plan PostPago Minutos, Megas y Descuento");
+                System.out.println("5. Presentar");
+                System.out.println("6. Salir");
                 System.out.println("------------------------------------------------------");
                 System.out.print("Opc: ");
                 operador = scanner.nextLine();
-                System.out.print("Nombre del propietario: ");
-                String nombrePropietario = scanner.nextLine();
-                System.out.print("Apellidos del propietario: ");
-                String apellidosPropietario = scanner.nextLine();
-                System.out.print("Pasaporte del propietario: ");
-                String pasaportePropietario = scanner.nextLine();
-                System.out.print("Ciudad del propietario: ");
-                String ciudadPropietario = scanner.nextLine();
-                System.out.print("Barrio del propietario: ");
-                String barrioPropietario = scanner.nextLine();
-                System.out.print("Marca del celular: ");
-                String marcaCelular = scanner.nextLine();
-                System.out.print("Modelo del celular: ");
-                String modeloCelular = scanner.nextLine();
-                System.out.print("Número del celular: ");
-                String numeroCelular = scanner.nextLine();
+                if (operador.equals("5")) {
+                    System.out.println("Presentando Datos");
+                } else if(operador.equals("6")){
+                    System.out.println("Saliendo");
+                }else {
+                    System.out.print("Nombre del propietario: ");
+                    nombrePropietario = scanner.nextLine();
+                    System.out.print("Apellidos del propietario: ");
+                    apellidosPropietario = scanner.nextLine();
+                    System.out.print("Pasaporte del propietario: ");
+                    pasaportePropietario = scanner.nextLine();
+                    System.out.print("Ciudad del propietario: ");
+                    ciudadPropietario = scanner.nextLine();
+                    System.out.print("Barrio del propietario: ");
+                    barrioPropietario = scanner.nextLine();
+                    System.out.print("Marca del celular: ");
+                    marcaCelular = scanner.nextLine();
+                    System.out.print("Modelo del celular: ");
+                    modeloCelular = scanner.nextLine();
+                    System.out.print("Número del celular: ");
+                    numeroCelular = scanner.nextLine();
+                }
+
                 switch (operador) {
                     case "1" -> {
                         ban3 = false;
@@ -130,8 +141,14 @@ public class TrabajoFi {
                         ec.calcularPagoMensualTotal();
                         en.insertarPlanPostPagoMinutosMegasEconomico(ec);
                     }
-
-                    case "13" -> {
+                    case "5" -> {
+                        ban3 = false;
+                        en.establecerLista();
+                        for (int i = 0; i < en.obtenerDataAuto().size(); i++) {
+                            System.out.printf("%s\n", en.obtenerDataAuto().get(i));
+                        }
+                    }
+                    case "6" -> {
                         ban3 = false;
                         ban = false;
                     }
@@ -155,7 +172,8 @@ public class TrabajoFi {
                             ban2 = false;
                             ban = false;
                         }
-                        default -> System.out.println("Error......");
+                        default ->
+                            System.out.println("Error......");
                     }
                 } while (ban2);
             }
