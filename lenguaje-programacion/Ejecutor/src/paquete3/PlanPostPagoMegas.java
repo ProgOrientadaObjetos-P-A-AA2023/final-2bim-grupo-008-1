@@ -4,7 +4,6 @@
  */
 package paquete3;
 
-import paquete3.PlanCelular;
 
 /**
  *
@@ -63,8 +62,9 @@ public class PlanPostPagoMegas extends PlanCelular{
                "Pago Mensual: $%.2f\n" + obtenerPagoMensual();
     }
 
+    
     @Override
     public void calcularPagoMensualTotal() {
-       pagoMensual=megasEnGigas * costoPorGiga + tarifaBase;
+         pagoMensual=megasEnGigas * costoPorGiga + tarifaBase;
     }
 }

@@ -99,9 +99,6 @@ public abstract class PlanCelular {
         return pagoMensual;
     }
 
-    public void establecerPagoMensual(double paMensual) {
-        pagoMensual = paMensual;
-    }
     
     public abstract void calcularPagoMensualTotal();
     
@@ -110,7 +107,7 @@ public abstract class PlanCelular {
 
         String cadena = String.format("Datos de Paln\n");
 
-        cadena = String.format("Nombre: %s\n"
+        cadena = String.format("%sNombre: %s\n"
                 + "Apellidos: %s\n"
                 + "Pasaporte: %s\n"
                 + "Ciudad: %s\n"
