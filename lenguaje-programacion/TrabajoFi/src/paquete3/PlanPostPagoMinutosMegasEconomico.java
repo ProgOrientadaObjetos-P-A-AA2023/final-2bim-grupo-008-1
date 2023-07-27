@@ -12,7 +12,7 @@ public class PlanPostPagoMinutosMegasEconomico extends PlanCelular {
 
     // Atributos específicos para PlanPostPagoMinutosMegasEconomico
     private int minutos;
-    private double costoMinuto;
+    private double costoMinuto; 
     private double megasEnGigas;
     private double costoPorGiga;
     private double porcentajeDescuento;
@@ -67,7 +67,7 @@ public class PlanPostPagoMinutosMegasEconomico extends PlanCelular {
 
     public double obtenerPorcentajeDescuento() {
         return porcentajeDescuento;
-    }
+    } 
 
     public void establecerPorcentajeDescuento(double porcentajeDescuent) {
         porcentajeDescuento = porcentajeDescuent;

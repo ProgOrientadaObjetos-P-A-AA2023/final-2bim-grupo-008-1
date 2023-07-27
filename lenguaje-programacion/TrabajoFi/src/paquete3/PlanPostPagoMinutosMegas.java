@@ -11,9 +11,9 @@ package paquete3;
 public class PlanPostPagoMinutosMegas extends PlanCelular{
      // Atributos específicos para PlanPostPagoMinutosMegas
     private int minutos;
-    private double costoMinuto;
-    private double megasEnGigas;
-    private double costoPorGiga;
+    private double costoMinuto; 
+    private double megasEnGigas; 
+    private double costoPorGiga; 
 
     public PlanPostPagoMinutosMegas(int m, double cMinuto, double mEnGigas, 
                                    double cPorGiga, String nomPropietario, String apPropietario, 
@@ -51,7 +51,7 @@ public class PlanPostPagoMinutosMegas extends PlanCelular{
     }
 
     public void establecerMegasEnGigas(double mEnGigas) {
-        megasEnGigas = mEnGigas;
+        megasEnGigas = mEnGigas; 
     }
 
     public double obtenerCostoPorGiga() {
